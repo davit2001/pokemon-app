@@ -10,16 +10,20 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ title, src }) => (
-  <Link href={`/pokemons/${title}`} prefetch>
-    <NextUICard className="py-4 max-w-[200px] mx-auto">
+  <Link
+    href={`/pokemons/${title}`} prefetch
+    className="w-full h-full max-w-[360px] max-h-[320px] mx-auto"
+  >
+    <NextUICard className="py-4 max-h-[320px] mx-auto">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <h2 className="font-bold text-lg capitalize">{title}</h2>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
         <Image
+          removeWrapper
           isZoomed
           alt="Card cover image"
-          className="object-cover rounded-xl w-full"
+          className="object-cover rounded-xl w-full h-full"
           src={src}
           fallbackSrc={FallbackImage.src}
         />
