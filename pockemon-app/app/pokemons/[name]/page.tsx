@@ -1,15 +1,10 @@
-import { FC } from 'react';
 import PokemonDetails from '@/ui/molecules/PokemonDetails';
+import { fetchPokemonByName } from '@/services/pokemon.service';
 
-interface PokemonDetailsProps {
-  title: string;
-  description: string;
-  src: string;
-  params: any;
-}
+const PokemonDetailsPage: any = async ({ params }: any) => {
+  const data = await fetchPokemonByName(params.name);
 
-const PokemonDetailsPage: FC<PokemonDetailsProps> = ({ params }) => {
-  return <PokemonDetails name={params.name} />
+  return <PokemonDetails data={data} />
 };
 
 export default PokemonDetailsPage;
