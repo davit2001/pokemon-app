@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import {Card as NextUICard, CardHeader, CardBody } from "@nextui-org/card";
 import { Image } from '@nextui-org/image';
+import FallbackImage from '@/assets/images/fallback-image.png';
 
 interface CardProps {
   title: string;
@@ -20,6 +21,7 @@ const Card: FC<CardProps> = ({ title, src }) => (
           alt="Card cover image"
           className="object-cover rounded-xl w-full"
           src={src}
+          fallbackSrc={FallbackImage.src}
         />
       </CardBody>
     </NextUICard>

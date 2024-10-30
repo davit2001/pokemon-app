@@ -1,7 +1,7 @@
 
 import { Image } from '@nextui-org/image';
 import { FC } from 'react';
-
+import FallbackImage from '@/assets/images/fallback-image.png';
 
 interface PokemonDetailsProps {
   data: {
@@ -18,6 +18,7 @@ const PokemonDetails: FC<PokemonDetailsProps> = ({ data }) => {
       </h1>
       <div className="flex flex-wrap gap-3 justify-between mt-3 w-full max-h-[300px]">
         <Image
+          fallbackSrc={FallbackImage.src}
           removeWrapper
           isZoomed
           alt="Card cover image"
