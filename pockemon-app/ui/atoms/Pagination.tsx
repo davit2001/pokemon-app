@@ -1,3 +1,4 @@
+'use client';
 import { FC, useCallback } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Pagination as NextUIPagination } from "@nextui-org/pagination";

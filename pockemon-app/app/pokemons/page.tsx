@@ -1,8 +1,15 @@
-import PokemonsSection from '@/ui/orgnaisms/PokemonsSection';
+import PokemonsSection from '@/components/PokemonsSection';
+import { fetchPokemons } from '@/services/pokemon.service';
 
-const Pokemons = () => {
+const Pokemons = async ({ searchParams }: {
+  searchParams: {
+    page: number;
+  };
+}) => {
+  const response = await fetchPokemons({ page: searchParams?.page });
+
   return (
-    <PokemonsSection />
+    <PokemonsSection data={response?.data} count={response.count} />
   );
 };
 

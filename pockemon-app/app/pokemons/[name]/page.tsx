@@ -1,4 +1,4 @@
-import PokemonDetails from '@/ui/molecules/PokemonDetails';
+import PokemonDetails from '@/components/PokemonDetails';
 import { fetchPokemonByName } from '@/services/pokemon.service';
 
 const PokemonDetailsPage: any = async ({ params }: any) => {
